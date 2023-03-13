@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign up - Master Group</title>
+    <link rel="stylesheet" href="CSS/StyleSheetPage.css">
+    <link rel="icon" type="image/x-icon" href="Image/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="logo">
+                <a class="navigationTop" href="HomePage.html"><img src="Image/MasterLogoWhiteCropped.png" style="max-width: 70px" alt="Home"/></a>
+            </div>
+            <a href="HomePage.html">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn"><a href="AboutPage.html">About</a>
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Work</a>
+                    <a href="#">Jobs</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn"><a href="NewsPage.html">News</a>
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Entertainment</a>
+                    <a href="#">Sports</a>
+                    <a href="#">Learning</a>
+                    <a href="#">General</a>
+                    <a href="#">Trending</a>
+                </div>
+            </div>
+            <input type="text" name="search" id="searchBoxId" placeholder="Search...">
+            <div style="float: right">
+                <a href="SignInPage.html">Sign in</a>
+                <a href="SignUpPage.html">Sign up</a>
+            </div>
+        </div>
+    </nav>
+    <article class="signUp" style="padding: 90px">
+        <div class="signUpLabel" style="text-align: center"><h1 style="font-size: 35px">Sign Up</h1><br/>Already have an account? <a href="SignInPage.html">Sign in</a></div>
+        <form class="signUpForm" action="HomePage.html" method="post">
+            <label for="firstNameId">First name:</label>
+            <input type="text" name="firstName" required id="firstNameId"><br/>
+            <label for="lastNameId">Last name:</label>
+            <input type="text" name="lastName" required id="lastNameId" minlength="8"><br/>
+            <label for="emailId">Email:</label>
+            <input type="email" name="email" required placeholder="abc@gmail.com" id="emailId" maxlength="255"><br/>
+            <label for="passId">Password:</label>
+            <input type="password" name="pass" required id="passId" minlength="8"><br/>
+            <label for="dobId">Date of birth:</label>
+            <input type="date" name="dob" required id="dobId" maxlength="255"><br/>
+            <label for="countryOriginId">Country:</label>
+            <select name="countryOrigin" required id="countryOriginId">
+                <option value="none"></option>
+                <option value="china">China</option>
+                <option value="thailand">Thailand</option>
+                <option value="vietnam">Vietnam</option>
+                <option value="us">United States</option>
+            </select><br/>
+            <label class="container">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a> of Master Group.
+                <input type="checkbox" required>
+                <span class="checkmark"></span>
+            </label>
+            <input id="submit" type="submit" value="Sign up">
+        </form>
+    </article>
+    <footer>
+        <img src="Image/MasterLogoBlack.png" style="max-width: 100px"/>
+        <div class="footerBelowImage"><!-- allows space -->
+            Master Group, No.10 New Avenue, Jacobs City, Mini World<br/>
+            Contact us: 1900 22 22 22 or 0984772722<br/>
+            &copy;2023 Master Group. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>

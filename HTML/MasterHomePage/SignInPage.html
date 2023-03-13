@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign in - Master Group</title>
+  <link rel="stylesheet" href="CSS/StyleSheetPage.css">
+  <link rel="icon" type="image/x-icon" href="Image/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <div class="navbar">
+      <div class="logo">
+        <a class="navigationTop" href="HomePage.html"><img src="Image/MasterLogoWhiteCropped.png" style="max-width: 70px" alt="Home"/></a>
+      </div>
+      <a href="HomePage.html">Home</a>
+      <div class="dropdown">
+        <button class="dropbtn"><a href="AboutPage.html">About</a>
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Work</a>
+          <a href="#">Jobs</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn"><a href="NewsPage.html">News</a>
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Entertainment</a>
+          <a href="#">Sports</a>
+          <a href="#">Learning</a>
+          <a href="#">General</a>
+          <a href="#">Trending</a>
+        </div>
+      </div>
+      <input type="text" name="search" id="searchBoxId" placeholder="Search...">
+      <div style="float: right">
+        <a href="SignInPage.html">Sign in</a>
+        <a href="SignUpPage.html">Sign up</a>
+      </div>
+    </div>
+  </nav>
+  <article class="signIn" style="padding: 150px">
+    <h1 style="text-align: center; font-size: 35px">Sign In</h1>
+    <form class="signInForm" action="HomePage.html" method="post">
+      <label for="emailId">Email:</label>
+      <input type="email" name="email" autofocus required placeholder="abc@gmail.com" id="emailId" maxlength="255"><br/>
+      <label for="passId">Password:</label>
+      <input type="password" name="pass" required id="passId" minlength="8"><br/>
+      <div class="forgotSignup"><a href="#">Forgot password?</a><br/>New here? <a href="SignUpPage.html">Create one!</a></div>
+      <input id="submit" type="submit" value="Sign in">
+    </form>
+  </article>
+  <footer>
+    <img src="Image/MasterLogoBlack.png" style="max-width: 100px"/>
+    <div class="footerBelowImage"><!-- allows space -->
+      Master Group, No.10 New Avenue, Jacobs City, Mini World<br/>
+      Contact us: 1900 22 22 22 or 0984772722<br/>
+      &copy;2023 Master Group. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>

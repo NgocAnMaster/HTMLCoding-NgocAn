@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../js/jquery_slim.js" ></script>
+</head>
+<body>
+<label>Name</label>
+<input type="text" id="nameId" onkeydown="onKeyUp()" onmouseenter="eventHandle()" onblur="eventHandle1()"/>
+<p id="testId"></p>
+<button id="btId"> click me</button>
+<button id="bt1Id"> show text</button>
+</body>
+</html>
+<script>
+    $(document).ready(function (){
+        // document.getElementById("nameId").value = "T2210E";
+        $("#nameId").val("T2301E");
+        // let name = $("#nameId").val();
+        $("#testId").text("FPT Aptech");
+        $("#btId").click(function (){
+            $("#testId").toggle();
+        });
+    })
+</script>
+
+
+<script>
+    // document.write("Hello T2301E");
+    // document.write("FPT Aptech");
+    // document.write("</br>")
+    // document.writeln("Hello T2301E");
+    // document.writeln("FPT Aptech");
+    let a = 10;
+    a = 20;
+    a = "T2301E";
+    const b = 30;
+    var c = 10;
+    var c = "T2310E";
+    console.log("Gia tri cua a la: "+a);
+    console.log("Gia tri cua b la: "+b);
+    console.log("Gia tri cua c la: "+c);
+    if(isNaN(b)){
+        alert(eval("2+2"));
+        confirm("Ban co mon hoc lai mon khong?");
+    }
+    // let inputString = prompt("Vui long nhap ten cua ban");
+    // alert("ten của ban là : "+inputString);
+    function onKeyUp(){
+        let name = document.getElementById("nameId").value;
+        console.log("Name: "+name);
+    }
+
+    function eventHandle(){
+        let name = document.getElementById("nameId").value;
+        document.getElementById("nameId").value = name.toUpperCase();
+    }
+
+    function eventHandle1(){
+        document.getElementById("nameId").style.color = "red";
+
+    }
+
+</script>

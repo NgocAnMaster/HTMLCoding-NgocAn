@@ -1,0 +1,28 @@
+table, th, td{
+    border: solid black 1px;
+}
+
+table{
+    border-collapse: collapse;
+    width: 700px;
+}
+
+td{
+    text-align: center;
+    vertical-align: top;
+}
+td, th{
+    padding: 10px;
+}
+a{
+    text-decoration: none;
+}
+input{
+    width: 300px;
+    height: 30px;
+}
+
+#submit{
+    width: 70px;
+    margin-top: 30px;
+}
