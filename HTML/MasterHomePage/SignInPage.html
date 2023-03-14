@@ -101,7 +101,7 @@
       <input type="email" name="email" autofocus placeholder="abc@gmail.com" id="emailId" maxlength="255">
       <p class="error" id="emailErrorId"></p><br/>
       <label for="passId">Password:</label>
-      <input type="password" name="pass" id="passId">
+      <input type="password" name="pass" id="passId" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
       <p class="error" id="passErrorId"></p><br/>
       <div class="forgotSignup"><a href="#" id="forgotId">Forgot password?</a><br/>New here? <a href="SignUpPage.html">Create one!</a></div>
       <input id="submit" type="submit" value="Sign in">
@@ -121,7 +121,7 @@
         <input type="email" name="email" autofocus placeholder="abc@gmail.com" id="emailResetId" maxlength="255">
         <p class="error" id="emailResetErrorId"></p><br/>
         <label for="passIdReset">Password:</label>
-        <input type="password" name="passReset" id="passIdReset" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+        <input type="password" name="passReset" id="passIdReset">
         <p class="info" id="passResetRequireId">Enter a password that must contain:<br/>- at least 8 characters<br/>- at least one uppercase letter<br/>- at least one lowercase letter<br/>- at least one number</p><br/>
         <p class="error" id="passResetErrorId"></p><br/>
         <label for="passRetypeId">Retype your password:</label>
