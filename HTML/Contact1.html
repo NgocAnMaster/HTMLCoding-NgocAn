@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <script src="../JS/jsFunctionFile.js"></script>
+</head>
+<body>
+<p id="addId"></p>
+<p id="abcId"></p>
+<p id="arrId"></p>
+<p id="studentId"></p>
+</body>
+</html>
+<script>
+    let total = add();
+    let b = abc(total);
+    document.getElementById("abcId").innerHTML = "Tich là :"+b;
+    document.getElementById("addId").innerHTML = "Tong là :"+total;
+    let arr1 = ["abc"];
+    changeArr(arr1)
+    document.getElementById("arrId").innerHTML = arr1[0];
+    //Custom object
+    let student =  new Object();
+    student.name = "Nguyen Văn A";
+    student.className = "T2301E";
+    student.age = "22";
+    student.doExam = function (){
+        return "Pass Exam";
+    }
+    document.getElementById("studentId").innerHTML ="Name :"+ student.name + " Lớp:"+student.className + " Tuổi:"+student.age + " Exam value:"+student.doExam();
+
+    function studentTemp(name, age, className){
+        this.name = name;
+        this.age = age;
+        this.className = className;
+    }
+    let student1 = new studentTemp("A","22","T2301E");
+    console.log("Student name: "+student1.name);
+    let str1 = "t2301E";
+    str1 = str1.replace("t", "T");
+    let index = str1.indexOf("T");
+    str1 = str1.concat("-FPT Aptech");// T2301E-FPT Aptech
+    let arrStr = str1.split("-");
+    alert(" phan tu thu 1:"+arrStr[0] +" phan tu thu 2:"+arrStr[1]);
+
+    let Pi =  Math.PI;
+    console.log("Gia tri cua PI: "+Pi);
+    console.log("Lam tro bang floor:"+Math.floor(4.6));
+    console.log("Lam tro bang ceil:"+Math.ceil(4.3));
+    let today = new Date();
+    let month = today.getMonth();
+    console.log("month :"+month);
+    console.log("time :"+today.getTime());
+    let timeCheck = new Date(today.getTime());
+
+    let objString = new String("Test Object");
+    function  changeStr(str){
+        str = str.concat(" Test ref ok");
+        return str;
+    }
+    console.log(typeof(objString));
+    changeStr(objString);
+    console.log(typeof(objString));
+    console.log("test ref: "+objString);
+
+
+
+
+
+</script>

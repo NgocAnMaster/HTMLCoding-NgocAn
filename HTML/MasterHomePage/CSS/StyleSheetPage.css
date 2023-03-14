@@ -133,12 +133,8 @@ article{
     color: black;
     text-shadow: 1px 1px white;
 }
-.signInForm{
-    width: 50%;
-    padding-left: 25%;
-}
-.signUpForm{
-    width: 50%;
+.signInForm, .signUpForm{
+    width: 73%;
     padding-left: 25%;
 }
 input, select {
@@ -160,7 +156,12 @@ input[type=submit]{
 }
 input:focus{
     border-bottom: 2px solid orange;
-    border-radius: 4px;
+}
+input[type=submit]:hover{
+    background-color: #3f3ff1;
+}
+input[type=submit]:focus{
+    border-bottom: none;
 }
 .forgotSignup{
     float: left;
@@ -387,4 +388,14 @@ input:focus{
 .active,
 .demo:hover {
     opacity: 1;
+}
+/* end */
+.error{
+    color: red;
+    font-size: 12px;
+    margin: 0;
+}
+.info{
+    font-size: 12px;
+    margin: 0;
 }
