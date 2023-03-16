@@ -1,0 +1,142 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+nav{
+     width: 95%;
+     background-color: black;
+     border: solid orange 2px;
+     position: fixed;
+    margin: 0;
+    display: flex;
+ }
+.menuIcon {
+    width: 24px;
+    height: 4px;
+    background-color: white;
+    margin: 5px 6px;
+}
+.navbar:active, .mobileMenu-content a:active, .mobileAccMenu-content a:active, .userIcon:active{
+    background-color: orange;
+}
+.logoTop{
+    margin-top: 8px;
+    margin-left: 8px;
+}
+.userIcon{
+    position: absolute;
+    right: 6%;
+    padding: 3px 5px;
+    margin-top: 3px;
+    width: 18px;
+    height: 20px;
+}
+/* The Modal (background) */
+.mobileMenu, .mobileAccMenu {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.mobileMenu-content {
+    background-color: black;
+    color: white;
+    margin: 0; /* 15% from the top and centered */
+    padding-left: 20px;
+    padding-top: 30px;
+    overflow: auto; /* Enable scroll if needed */
+    border: none;
+    width: 70%; /* Could be more or less, depending on screen size */
+    height: 100%;
+}
+.mobileAccMenu-content {
+    background-color: black;
+    color: white;
+    margin: 0; /* 15% from the top and centered */
+    padding-left: 20px;
+    padding-top: 30px;
+    border: none;
+    width: 100%; /* Could be more or less, depending on screen size */
+    height: 60%;
+}
+
+/* Add Animation */
+@keyframes slideIn {
+    from {left: -300px; opacity: 0}
+    to {left: 0; opacity: 1}
+}
+
+/* Add Animation */
+@keyframes fadeIn {
+    from {left: 0; opacity: 0}
+    to {left: 0; opacity: 1}
+}
+.ulNav{
+    list-style-type: none;
+}
+.mobileMenu-content a, .mobileAccMenu-content a {
+    float: left;
+    width: 86%;
+    font-size: 16px;
+    color: white;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.search {
+    width: 70%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: white;
+    background-image: url('../../Image/search-icon-png-18.png');
+    background-size: 19px;
+    background-position: 10px 6px;
+    background-repeat: no-repeat;
+    padding: 6px 20px 6px 40px;
+    margin-left: 24px;
+}
+article{
+    padding-top: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+h1{
+    font-size: 35px;
+}
+.newsSubtitle{
+    font-size: 20px;
+    font-style: italic;
+}
+figure figcaption .newsFigCaption{
+    text-align: center;
+}
+.newsText{
+    font-size: 17px;
+    margin: 10px 0;
+}
+h2{
+    font-size: 24px;
+}
+.newsAuthor{
+    text-align: right;
+    font-size: 13px;
+    padding: 20px 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    color: gray;
+    text-decoration: underline;
+}

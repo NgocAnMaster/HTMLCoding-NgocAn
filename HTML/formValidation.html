@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+  <style>
+    form{
+      width: 700px;
+      display: flex;
+    }
+    .form_element{
+      width: 50%;
+    }
+    input{
+      width: 100%;
+      height: 30px;
+    }
+    #submitId{
+      width: 50px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+<form method="post" action="#" onsubmit="return validateForm()">
+  <div class="form_element">
+    <label>Username<span style="color: red">*</span></label>
+    <input type="text" id="nameId" placeholder="Username">
+    <span id="errUsername" style="color: red"></span>
+  </div>
+  <div class="form_element">
+    <label>Password<span style="color: red">*</span></label>
+    <input type="text" id="passId" placeholder="Password">
+    <span id="errPass" style="color: red"></span>
+  </div>
+  <div class="form_element">
+
+  </div>
+  <input id="submitId" type="submit" value="submit" />
+</form>
+</body>
+</html>
+<script>
+  function validateForm(){
+    let username = document.getElementById("nameId").value;
+    let pass = document.getElementById("passId").value;
+    let check = false;
+    if(username.trim() == ""){
+      document.getElementById("errUsername").innerHTML = "Vui long nhap username";
+      // document.getElementById("errUsername").style.display = "none";
+    }else{
+      if(username.trim() != "abc"){
+        document.getElementById("errUsername").innerHTML = "Vui long nhap username la abc";
+      }
+    }
+    if(pass.trim() == ""){
+      document.getElementById("errPass").innerHTML = "Vui long nhap password";
+      check = false;
+    }else{
+      check = true;
+    }
+    return check;
+  }
+  let username = document.getElementById("nameId");
+  let pass = document.getElementById("passId");
+  username.oninput = function (){
+    document.getElementById("errUsername").innerHTML = "";
+  }
+  pass.oninput = function (){
+    document.getElementById("errPass").innerHTML = "";
+  }
+</script>
