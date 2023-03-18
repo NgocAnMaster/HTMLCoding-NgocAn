@@ -48,6 +48,15 @@
     <article>
         <h1>Master News</h1>
         <div class="news">
+            <a href="Canvas.html" class="news">
+                <canvas width="200" height="130" style="border: solid black 1px" id="lineBentId"></canvas>
+                <ul class="noBullet">
+                    <li><h3>Canvas Drawings</h3></li>
+                    <li>The canvas is one of the widely used graphics in making HTML.<br/>Here we will introduce the simplest drawings made in canvas frames.</li>
+                </ul>
+            </a>
+        </div>
+        <div class="news">
             <a href="Vinfast-VF8.html" class="news">
                 <img src="Image/VinFast-VF8.png" height="100" width="200"/>
                 <ul class="noBullet">
@@ -103,3 +112,18 @@
     </footer>
 </body>
 </html>
+<script>
+    //lineBent
+    let lineBent = document.getElementById("lineBentId");
+    let contextLineBent = lineBent.getContext("2d");
+    contextLineBent.beginPath();
+    contextLineBent.moveTo(0,0);
+    contextLineBent.lineTo(200,50);
+    contextLineBent.lineTo(100,150);
+    contextLineBent.lineTo(20,80);
+    contextLineBent.lineTo(5,140);
+    contextLineBent.lineTo(200,100);
+    contextLineBent.strokeStyle = "gray";
+    contextLineBent.lineWidth = 5;
+    contextLineBent.stroke();
+</script>

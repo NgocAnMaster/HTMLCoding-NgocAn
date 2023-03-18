@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Drawings - Master Group</title>
+  <link rel="stylesheet" href="CSS/StyleSheetPage.css">
+  <link rel="icon" type="image/x-icon" href="Image/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--    <script src="JS/JavaScriptPage.js"></script>-->
+  <style>
+    canvas {
+      border: solid orange 1px;
+      border-radius: 5%;
+    }
+    .news{
+      display: grid;
+      padding-right: 10px;
+    }
+    .noBullet{
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="navbar">
+    <div class="logo">
+      <a class="navigationTop" href="HomePage.html"><img src="Image/MasterLogoWhiteCropped.png" style="max-width: 70px" alt="Home"/></a>
+    </div>
+    <a href="HomePage.html">Home</a>
+    <div class="dropdown">
+      <button class="dropbtn"><a href="AboutPage.html">About</a>
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#">Work</a>
+        <a href="#">Jobs</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn"><a href="NewsPage.html">News</a>
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#">Entertainment</a>
+        <a href="#">Sports</a>
+        <a href="#">Learning</a>
+        <a href="#">General</a>
+        <a href="#">Trending</a>
+      </div>
+    </div>
+    <input type="text" name="search" id="searchBoxId" placeholder="Search...">
+    <div style="float: right">
+      <a href="SignInPage.html">Sign in</a>
+      <a href="SignUpPage.html">Sign up</a>
+    </div>
+  </div>
+</nav>
+<div style="display: flex">
+  <article style="max-width: 1000px">
+    <h1 style="font-size: 40px">Canvas Drawings</h1>
+    <div style="font-size: 25px">
+      In today's article, we will introduce the simplest drawings made in canvas frames. Let's get started!
+    </div><br/>
+    <!-- Container for the image gallery -->
+  <div class="newsText">
+    The canvas is one of the widely used graphics in making HTML. Use of this element optimizes the whole web page and helps reduce the overall loading time due to image downloading elements. Here are different examples of canvas graphics in HTML. Watch the source code to know more about the drawn canvas, its JavaScript source code and more.
+    </div>
+    <section>
+      <h2 class="sectionHeader">Straight line</h2>
+      <div class="newsText">
+        Here we have two types of straight line: single straight line and multiple straight line. Below is an example of single straight line:
+      </div>
+      <canvas  id="lineId"></canvas>
+      <div class="newsText">
+        And here is an example of the multiple straight line. This might consist of two or more consecutive straight line (which have the angle of 180<sup>o</sup>), or multiple lines with different angles.
+      </div>
+      <canvas width="300" height="300" id="lineBentId"></canvas>
+    </section>
+    <section>
+      <h2 class="sectionHeader">Rectangle</h2>
+      <div class="newsText">
+        Below is a rectangle that is orange-filled, black-bordered and have two empty rectangle spaces inside.
+      </div>
+      <canvas width="300" height="300" id="rectId"></canvas>
+    </section>
+    <section>
+      <h2 class="sectionHeader">Arc</h2>
+      <div class="newsText">
+        The arc below is a half-circle with red border, pink fill color and drawn clockwise.
+      </div>
+      <canvas width="300" height="300" id="arcId"></canvas>
+    </section>
+    <section>
+      <h2 class="sectionHeader">Circle</h2>
+      <div class="newsText">
+        Below is a sample of the circle, in which the start point is set to 0 and the end point is set to 2PI.
+      </div>
+      <canvas width="300" height="300" id="circleId"></canvas>
+    </section>
+    <section>
+      <h2 class="sectionHeader">Bezier curve</h2>
+      <div class="newsText">
+        Another type of curve is the Bezier curve. The following canvas demonstrates one of this type of curve. This has two control points, each serves as a point to take a curve.
+      </div>
+      <canvas width="300" height="300" id="bzId"></canvas>
+    </section>
+    <section>
+      <h2 class="sectionHeader">Quadratic curve</h2>
+      <div class="newsText">
+        Following canvas demonstrates the quadratic curve, which is same as Bezier curve but with one control point only.
+      </div>
+      <canvas width="300" height="300" id="ptId"></canvas>
+    </section>
+    <section>
+      <h2 class="sectionHeader">Image</h2>
+      <div class="newsText">
+        The following canvas demonstrates the use of the image (Master logo here, for example) in it.
+      </div>
+      <canvas width="300" height="300" id="imgId"></canvas>
+    </section>
+    <section>
+      <h2 class="sectionHeader">Text</h2>
+      <div class="newsText">
+        The following canvas demonstrates the use of the text in the canvas (here is <i>Welcome to HTML5!</i>).
+      </div>
+      <canvas width="400" height="300" id="textId"></canvas>
+    </section>
+    <div class="newsText">
+      We hope that with those types of canvas demonstrated here, you'll know more about canvas HTML and how to use it. Happy programming!
+    </div>
+    <div class="newsAuthor"><b>Lê Ngọc An</b></div>
+  </article>
+  <aside style="max-width: 500px">
+    <h1>More by Master Group</h1>
+    <!-- Copy from News Page -->
+    <div class="news">
+      <a href="Vinfast-VF8.html" class="news">
+        <img src="Image/VinFast-VF8.png" height="100" width="200"/>
+        <ul class="noBullet">
+          <li><h3>Vinfast VF8 is now available!</h3></li>
+          <li>The product that makes evolution from the Vietnamese car industry - a fully electric car exported to the world!</li>
+        </ul>
+      </a>
+    </div>
+    <div class="news">
+      <a href="#" class="news">
+        <img src="Image/image_bca542d78f.png" height="100" width="200"/>
+        <ul class="noBullet">
+          <li><h3>More game shows this March</h3></li>
+          <li>From this weekend, The Fun Weekend is getting more fun than ever!<br/>Enjoy our new shows premiere this month on StarTV, EndlessTV and the Master Home app.</li>
+        </ul>
+      </a>
+    </div>
+    <div class="news">
+      <a href="#" class="news">
+        <img src="Image/CDTX2023Valentine.png" height="100" width="200"/>
+        <ul class="noBullet">
+          <li><h3>Valentine with The Spring Ride</h3></li>
+          <li>With Valentine on the way, we'll celebrate it with our own way!<br/>Enjoy with your lover here this 14<sup>th</sup> of February.</li>
+        </ul>
+      </a>
+    </div>
+    <div class="news">
+      <a href="#" class="news">
+        <img src="Image/CDTX2023OfficialPoster.png" height="100" width="200"/>
+        <ul class="noBullet">
+          <li><h3>Announcement of The Youth Ride 2023</h3></li>
+          <li>Everyone have their own youth...<br/>Join our ride now, from 1<sup>st</sup> February!</li>
+        </ul>
+      </a>
+    </div>
+    <div class="news">
+      <a href="#" class="news">
+        <img src="Image/QM23Poster5Official(WithoutSponsors).png" height="100" width="200"/>
+        <ul class="noBullet">
+          <li><h3>Master Tet - Quy Mao 23 has started!</h3></li>
+          <li>Bring more moments to your family this Tet with our familiar shows from the creators of the best event for 3 consecutive years!<br/>Only from February 21<sup>st</sup> to February 26<sup>th</sup>.</li>
+        </ul>
+      </a>
+    </div>
+  </aside>
+</div>
+<footer>
+  <img src="Image/MasterLogoBlack.png" style="max-width: 100px"/>
+  <div class="footerBelowImage"><!-- allows space -->
+    Master Group, No.10 New Avenue, Jacobs City, Mini World<br/>
+    Contact us: 1900 22 22 22 or 0984772722<br/>
+    &copy;2023 Master Group. All rights reserved.
+  </div>
+</footer>
+</body>
+</html>
+<script>
+  let line = document.getElementById("lineId");
+  let contextLine = line.getContext("2d");
+  contextLine.beginPath();
+  contextLine.moveTo(0,0);
+  contextLine.lineTo(300,150);
+  // contextLine.lineTo(200,250);
+  contextLine.strokeStyle = "blue";
+  contextLine.lineWidth = 5;
+  contextLine.stroke();
+  //lineBent
+  let lineBent = document.getElementById("lineBentId");
+  let contextLineBent = lineBent.getContext("2d");
+  contextLineBent.beginPath();
+  contextLineBent.moveTo(0,0);
+  contextLineBent.lineTo(300,150);
+  contextLineBent.lineTo(200,250);
+  contextLineBent.lineTo(40,160);
+  contextLineBent.lineTo(10,280);
+  contextLineBent.lineTo(300,300);
+  contextLineBent.strokeStyle = "gray";
+  contextLineBent.lineWidth = 5;
+  contextLineBent.stroke();
+
+  //rect
+  let rect = document.getElementById("rectId");
+  let contextRect = rect.getContext("2d");
+  contextRect.beginPath();
+  contextRect.rect(20,30, 200, 200);
+  contextRect.fillStyle = "Orange";
+  contextRect.fill();
+  contextRect.lineWidth = 5;
+  contextRect.strokeStyle = "black";
+  contextRect.clearRect(80, 95, 70, 50);
+  contextRect.clearRect(120, 60, 90, 18);
+  contextRect.stroke();
+
+  //arc
+  let arc = document.getElementById("arcId");
+  let contextArc = arc.getContext("2d");
+  contextArc.beginPath();
+  contextArc.arc(70, 70, 50,0 * Math.PI, 1 * Math.PI, false);
+  contextArc.strokeStyle = "red";
+  contextArc.stroke();
+  contextArc.fillStyle = "pink";
+  contextArc.fill();
+
+
+  //arc
+  let circle = document.getElementById("circleId");
+  let contextCircle = circle.getContext("2d");
+  contextCircle.beginPath();
+  contextCircle.arc(90, 100, 50,0, 2 * Math.PI, false);
+  contextCircle.strokeStyle = "pink";
+  contextCircle.lineWidth = 5;
+  contextCircle.stroke();
+  contextCircle.fillStyle = "lightGreen";
+  contextCircle.fill();
+
+  //bezier
+  let bz = document.getElementById("bzId");
+  let contextBz = bz.getContext("2d");
+  contextBz.beginPath();
+  contextBz.moveTo(90,20);
+  contextBz.bezierCurveTo(20,100,200,100,200,20);
+  contextBz.strokeStyle = "blue";
+  contextBz.stroke();
+
+  //pt
+  let pt = document.getElementById("ptId");
+  let contextPt = pt.getContext("2d");
+  contextPt.beginPath();
+  contextPt.moveTo(20,20);
+  contextPt.quadraticCurveTo(20,100,200,20);
+  contextPt.strokeStyle = "blue";
+  contextPt.lineWidth = 5;
+  contextPt.stroke();
+
+  //img
+  let img = document.getElementById("imgId");
+  let contextImage = img.getContext("2d");
+  contextImage.beginPath();
+  let imgObj = new Image();
+  imgObj.onload = function (){
+    contextImage.drawImage(imgObj, 0, 100,300,100);
+  }
+  imgObj.src = "Image/MasterLogoBlack.png";
+
+  //text
+  let text = document.getElementById("textId");
+  let contextText = text.getContext("2d");
+  contextText.font = "italic 30pt Montserrat";
+  contextText.fillStyle = "MediumVioletRed";
+  contextText.fillText("Welcome to HTML5!", 40, 150);
+</script>

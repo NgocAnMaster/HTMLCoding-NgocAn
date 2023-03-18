@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+  <style>
+    canvas{
+      border: solid red 1px;
+    }
+  </style>
+</head>
+<body>
+<canvas  id="lineId"></canvas>
+<canvas width="300" height="300" id="rectId"></canvas>
+<canvas width="300" height="300" id="arcId"></canvas>
+<canvas width="300" height="300" id="bzId"></canvas>
+<canvas width="300" height="300" id="ptId"></canvas>
+<canvas width="300" height="300" id="imgId"></canvas>
+</body>
+</html>
+<script>
+  let line = document.getElementById("lineId");
+  let contextLine = line.getContext("2d");
+  contextLine.beginPath();
+  contextLine.moveTo(0,0);
+  contextLine.lineTo(300,150);
+  // contextLine.lineTo(200,250);
+  contextLine.strokeStyle = "blue";
+  contextLine.lineWidth = 5;
+  contextLine.stroke();
+
+  //rect
+  let rect = document.getElementById("rectId");
+  let contextRect = rect.getContext("2d");
+  contextRect.beginPath();
+  contextRect.rect(20,30, 200, 200);
+  contextRect.fillStyle = "Orange";
+  contextRect.fill();
+  contextRect.lineWidth = 5;
+  contextRect.strokeStyle = "black";
+  contextRect.clearRect(80, 95, 70, 50);
+  contextRect.stroke();
+
+  //arc
+  let arc = document.getElementById("arcId");
+  let contextArc = arc.getContext("2d");
+  contextArc.beginPath();
+  contextArc.arc(70, 70, 50,0 * Math.PI, 1 * Math.PI, false);
+  contextArc.strokeStyle = "red";
+  contextArc.stroke();
+  contextArc.fillStyle = "pink";
+  contextArc.fill();
+
+  //bezier
+  let bz = document.getElementById("bzId");
+  let contextBz = bz.getContext("2d");
+  contextBz.beginPath();
+  contextBz.moveTo(90,20);
+  contextBz.bezierCurveTo(20,100,200,100,200,20);
+  contextBz.strokeStyle = "blue";
+  contextBz.stroke();
+
+  //pt
+  let pt = document.getElementById("ptId");
+  let contextPt = pt.getContext("2d");
+  contextPt.beginPath();
+  contextPt.moveTo(20,20);
+  contextPt.quadraticCurveTo(20,100,200,20);
+  contextPt.strokeStyle = "blue";
+  contextPt.lineWidth = 5;
+  contextPt.stroke();
+
+  //img
+  let img = document.getElementById("imgId");
+  let contextImage = img.getContext("2d");
+  contextImage.beginPath();
+  let imgObj = new Image();
+  imgObj.onload = function (){
+      contextImage.drawImage(imgObj, 0, 0);
+  }
+  imgObj.src = "../img/hand-holding-glass-globe-ball-tree-growing-green-nature-blur-background-eco-concept-161081206.jpg";
+</script>
