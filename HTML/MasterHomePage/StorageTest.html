@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Storage - Master Group</title>
+  <link rel="stylesheet" href="CSS/StyleSheetPage.css">
+  <link rel="icon" type="image/x-icon" href="Image/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--    <script src="JS/JavaScriptPage.js"></script>-->
+  <style>
+    button{
+      float: left;
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="navbar">
+    <div class="logo">
+      <a class="navigationTop" href="HomePage.html"><img src="Image/MasterLogoWhiteCropped.png" style="max-width: 70px" alt="Home"/></a>
+    </div>
+    <a href="HomePage.html">Home</a>
+    <div class="dropdown">
+      <button class="dropbtn"><a href="AboutPage.html">About</a>
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#">Work</a>
+        <a href="#">Jobs</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn"><a href="NewsPage.html">News</a>
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <a href="#">Entertainment</a>
+        <a href="#">Sports</a>
+        <a href="#">Learning</a>
+        <a href="#">General</a>
+        <a href="#">Trending</a>
+      </div>
+    </div>
+    <input type="text" name="search" id="searchBoxId" placeholder="Search...">
+    <div style="float: right">
+      <a href="SignInPage.html">Sign in</a>
+      <a href="SignUpPage.html">Sign up</a>
+    </div>
+  </div>
+</nav>
+<div style="display: flex">
+<article style="max-width: 1000px">
+  <h1 style="font-size: 40px">Student Storage</h1>
+  <div style="font-size: 25px">
+    Make a list for students using storage is one of the most popular methods to make a database in HTML. Today, we have prepared one of them. Enter any name and class, then press Save this Student to save it. Click on View Students to view all the students saved in storage.
+  </div>
+  <div style="margin: 20px 0 90px 0">
+    <div class="newsText">
+      <label>Name</label>
+      <input type="text" id="nameId">
+      <label>Age</label>
+      <input type="text" id="ageId">
+      <p id="pId"></p>
+
+      <button onclick="saveObject()">Save this Student</button>
+      <button onclick="getObject()">View Students</button>
+      <button onclick="deleteData()">Clear List</button>
+    </div>
+  </div>
+
+  <div class="newsAuthor"><b>Lê Ngọc An</b></div>
+</article>
+  <aside style="max-width: 500px">
+    <h1>More by Master Group</h1>
+    <!-- Copy from News Page -->
+    <div class="news">
+      <a href="Canvas.html" class="news">
+        <canvas width="125" height="100" style="border: solid black 1px" id="lineBentId"></canvas>
+        <ul class="noBullet">
+          <li><h3>Canvas Drawings</h3></li>
+          <li>The canvas is one of the widely used graphics in making HTML.<br/>Here we will introduce the simplest drawings made in canvas frames.</li>
+        </ul>
+      </a>
+    </div>
+    <div class="news">
+      <a href="Vinfast-VF8.html" class="news">
+        <img src="Image/VinFast-VF8.png" height="100" width="200"/>
+        <ul class="noBullet">
+          <li><h3>Vinfast VF8 is now available!</h3></li>
+          <li>The product that makes evolution from the Vietnamese car industry - a fully electric car exported to the world!</li>
+        </ul>
+      </a>
+    </div>
+<!--    <div class="news">-->
+<!--      <a href="#" class="news">-->
+<!--        <img src="Image/image_bca542d78f.png" height="100" width="200"/>-->
+<!--        <ul class="noBullet">-->
+<!--          <li><h3>More game shows this March</h3></li>-->
+<!--          <li>From this weekend, The Fun Weekend is getting more fun than ever!<br/>Enjoy our new shows premiere this month on StarTV, EndlessTV and the Master Home app.</li>-->
+<!--        </ul>-->
+<!--      </a>-->
+<!--    </div>-->
+<!--    <div class="news">-->
+<!--      <a href="#" class="news">-->
+<!--        <img src="Image/CDTX2023Valentine.png" height="100" width="200"/>-->
+<!--        <ul class="noBullet">-->
+<!--          <li><h3>Valentine with The Spring Ride</h3></li>-->
+<!--          <li>With Valentine on the way, we'll celebrate it with our own way!<br/>Enjoy with your lover here this 14<sup>th</sup> of February.</li>-->
+<!--        </ul>-->
+<!--      </a>-->
+<!--    </div>-->
+<!--    <div class="news">-->
+<!--      <a href="#" class="news">-->
+<!--        <img src="Image/CDTX2023OfficialPoster.png" height="100" width="200"/>-->
+<!--        <ul class="noBullet">-->
+<!--          <li><h3>Announcement of The Youth Ride 2023</h3></li>-->
+<!--          <li>Everyone have their own youth...<br/>Join our ride now, from 1<sup>st</sup> February!</li>-->
+<!--        </ul>-->
+<!--      </a>-->
+<!--    </div>-->
+<!--    <div class="news">-->
+<!--      <a href="#" class="news">-->
+<!--        <img src="Image/QM23Poster5Official(WithoutSponsors).png" height="100" width="200"/>-->
+<!--        <ul class="noBullet">-->
+<!--          <li><h3>Master Tet - Quy Mao 23 has started!</h3></li>-->
+<!--          <li>Bring more moments to your family this Tet with our familiar shows from the creators of the best event for 3 consecutive years!<br/>Only from February 21<sup>st</sup> to February 26<sup>th</sup>.</li>-->
+<!--        </ul>-->
+<!--      </a>-->
+<!--    </div>-->
+  </aside>
+</div>
+<footer>
+  <img src="Image/MasterLogoBlack.png" style="max-width: 100px"/>
+  <div class="footerBelowImage"><!-- allows space -->
+    Master Group, No.10 New Avenue, Jacobs City, Mini World<br/>
+    Contact us: 1900 22 22 22 or 0984772722<br/>
+    &copy;2023 Master Group. All rights reserved.
+  </div>
+</footer>
+</body>
+</html>
+<script>
+  //input
+  let nameForm = document.getElementById("nameId");
+  let ageForm = document.getElementById("ageId");
+  nameForm.oninput = function (){
+    document.getElementById("pId").innerHTML = "";
+  }
+  ageForm.oninput = function (){
+    document.getElementById("pId").innerHTML = "";
+  }
+  function student(name, age){
+    this.name = name;
+    this.age = age;
+  }
+  if(/*"sessionStorage" in window &&*/ "localStorage" in window){
+    console.log("Loading storage.");
+
+    function saveObject(){
+      let name = document.getElementById("nameId").value;
+      let age = document.getElementById("ageId").value;
+
+      // sessionStorage.setItem("name", name);
+      // sessionStorage.setItem("age", age);
+      // localStorage.setItem("name", name);
+      // localStorage.setItem("age", age);
+      let newStudent = new student(name, age);
+      let stds = JSON.parse(localStorage.getItem("listStudent"));
+      if(stds){
+        for(let i in stds){
+          if(stds[i].name==newStudent.name&&stds[i].age==newStudent.age){
+            document.getElementById("pId").innerHTML = "This student is already in the storage. Please enter another student.";
+            console.log("ERROR: This student is already in the storage. Please enter another student.");
+            break;
+          }else {
+            stds.push(newStudent);
+            console.log("New student saved to the storage.");
+            document.getElementById("pId").innerHTML = "This student have been saved to the storage.";
+          }
+        }
+      }else{
+        stds= [newStudent];
+        console.log("A new storage have been created with the new student.");
+        document.getElementById("pId").innerHTML = "This student have been saved to the storage.<br/>As the storage was not available yet, a new storage has been created.";
+      }
+      localStorage.setItem("listStudent",JSON.stringify(stds));
+
+      // let std1 = new student("abc", 19);
+      // let std2 = new student("T2301E", 22);
+    }
+
+    function getObject(){
+
+      let stds = JSON.parse(localStorage.getItem("listStudent"));
+      if(stds==null){
+        document.getElementById("pId").innerHTML =  "The storage hasn't been created. Enter a student to get started.";
+        console.log("The list of students hasn't been created yet!");
+      }else{
+        document.getElementById("pId").innerHTML =  "Done. Check the console for the list.";
+        console.log("List of students:");
+        for(let i in stds){
+          if(stds[i]!=null){
+            console.log((stds[i]+1)+". "+stds[i].name + ", "+stds[i].age+" years old");
+          }else i++;
+      }
+
+      }
+    }
+
+    function deleteData(){
+      let key = "listStudent";
+      // sessionStorage.removeItem(key);
+      localStorage.removeItem(key);
+      console.log("The storage have been deleted.");
+      document.getElementById("pId").innerHTML = "The storage have been deleted.";
+    }
+  }else{
+    console.log("ERROR: This browser doesn't support storage.");
+  }
+  //
+  // function  saveObject(){
+  //
+  // }
+  // function  getObject(){
+  //
+  // }
+  //lineBent
+  let lineBent = document.getElementById("lineBentId");
+  let contextLineBent = lineBent.getContext("2d");
+  contextLineBent.beginPath();
+  contextLineBent.moveTo(0,0);
+  contextLineBent.lineTo(200,50);
+  contextLineBent.lineTo(100,150);
+  contextLineBent.lineTo(20,80);
+  contextLineBent.lineTo(5,140);
+  contextLineBent.lineTo(200,100);
+  contextLineBent.strokeStyle = "gray";
+  contextLineBent.lineWidth = 5;
+  contextLineBent.stroke();
+</script>

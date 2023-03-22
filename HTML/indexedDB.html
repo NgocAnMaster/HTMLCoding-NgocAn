@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IndexedDB</title>
+</head>
+<body>
+<label>Name</label>
+<input type="text" id="nameId">
+<label>Age</label>
+<input type="text" id="ageId"><br/>
+<button onclick="add()">Add Student</button>
+<button onclick="getStudentByKey()">Get Student</button>
+</body>
+</html>
+<script>
+  function  checkIndexedDB(){
+    return "indexedDB" in window;
+  }
+  let db;
+  document.addEventListener("DOMContentLoaded", function (){
+    if(!checkIndexedDB()){
+      return;
+    }
+    let requestOpen = indexedDB.open("Info",1);
+    requestOpen.onupgradeneeded = function (e){
+      let dbIndex = e.target.result;
+      let objectStorage = dbIndex.createObjectStore("students", {autoIncrement:true});
+    }
+    requestOpen.onsuccess = function (e){
+      console.log("create db success");
+      db = e.target.result;
+    }
+    requestOpen.onerror = function (e){
+      console.log("create db error");
+    }
+  }, false);
+  function newStudent(name,age){
+      this.name = name;
+      this.age = age;
+  }
+  // add data
+  function add(){
+      let name = document.getElementById("nameId").value;
+      let age = document.getElementById("ageId").value;
+      // let std = new newStudent(name, age);
+      let std = {
+          name:name,
+          age:age
+      }
+      let transaction = db.transaction(["students"],"readwrite");
+      let storage = transaction.objectStore("students");
+      let requestAdd = storage.add(std);
+      requestAdd.onsuccess = function (){
+          console.log("add new student success");
+          document.getElementById("nameId").value = "";
+          document.getElementById("ageId").value = "";
+      }
+      requestAdd.onerror = function (){
+          console.log("add new student error");
+      }
+  }
+  //get data by key
+  function getStudentByKey(){
+      let key = 1;
+      let transaction = db.transaction(["students"],"readonly");
+      let storage = transaction.objectStore("students");
+      let requestGet = storage.get(key);
+      requestGet.onsuccess = function (e){
+          let result = e.target.result;
+          for(let i in result){
+              console.log(i + " = "+result[i]);
+          }
+      }
+      requestGet.onerror = function (){
+          console.log("get data error");
+      }
+  }
+</script>

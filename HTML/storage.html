@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Storage</title>
+</head>
+<body>
+<label>Name</label>
+<input type="text" id="nameId">
+<label>Age</label>
+<input type="text" id="ageId">
+<p id="pId"></p>
+<button onclick="storageSession()">save data session</button>
+<button onclick="getDataSession()">get data session</button>
+<button onclick="deleteData()">delete data session</button>
+<button onclick="saveObject()">save data object</button>
+<button onclick="getObject()">get data object</button>
+</body>
+</html>
+<script>
+  if("sessionStorage" in window && "localStorage" in window){
+    // alert("window support sessionStorage, localStorage");
+    function  storageSession(){
+      let name = document.getElementById("nameId").value;
+      let age = document.getElementById("ageId").value;
+      sessionStorage.setItem("name", name);
+      sessionStorage.setItem("age", age);
+      localStorage.setItem("name", name);
+      localStorage.setItem("age", age);
+    }
+    function getDataSession(){
+      let name = sessionStorage.getItem("name");
+      let age = sessionStorage.getItem("age");
+      document.getElementById("pId").innerHTML = name + "-"+age;
+    }
+  }else{
+    // alert("window not support sessionStorage, localStorage");
+  }
+  function deleteData(){
+    let key = "name";
+    // sessionStorage.removeItem(key);
+    sessionStorage.clear();
+  }
+  function student(name, age){
+      this.name = name;
+      this.age = age;
+  }
+  function  saveObject(){
+      let std1 = new student("abc", 19);
+      let std2 = new student("T2301E", 22);
+      let stds = [std1,std2];
+      localStorage.setItem("listStudent",JSON.stringify(stds));
+  }
+  function  getObject(){
+      let stds = JSON.parse(localStorage.getItem("listStudent"));
+      for(let i in stds){
+          console.log("name: "+stds[i].name + ", age: "+stds[i].age);
+      }
+  }
+
+</script>

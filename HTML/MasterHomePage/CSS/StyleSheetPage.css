@@ -140,7 +140,7 @@ aside{
     width: 73%;
     padding-left: 25%;
 }
-input, select {
+input, select, button {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -148,7 +148,7 @@ input, select {
     border: black solid 1px;
     border-radius: 10px;
 }
-input[type=submit]{
+input[type=submit], button{
     width: auto;
     float: right;
     padding: 12px 20px;
@@ -160,10 +160,10 @@ input[type=submit]{
 input:focus{
     border-bottom: 2px solid orange;
 }
-input[type=submit]:hover{
+input[type=submit]:hover, button:hover{
     background-color: #3f3ff1;
 }
-input[type=submit]:focus{
+input[type=submit]:focus, button:focus{
     border-bottom: none;
 }
 .forgotSignup{

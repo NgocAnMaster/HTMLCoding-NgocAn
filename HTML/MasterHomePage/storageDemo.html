@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Storage Demo</title>
+</head>
+<body>
+<label>Name</label>
+<input type="text" id="nameId">
+<label>Age</label>
+<input type="text" id="ageId">
+<p id="pId"></p>
+<!--<button onclick="storageSession()">save data session</button>-->
+<!--<button onclick="getDataSession()">get data session</button>-->
+
+<button onclick="saveObject()">save data object</button>
+<button onclick="getObject()">get data object</button>
+<button onclick="deleteData()">delete data session</button>
+</body>
+</html>
+<script>
+  function student(name, age){
+  this.name = name;
+  this.age = age;
+}
+  if("sessionStorage" in window && "localStorage" in window){
+    // alert("window support sessionStorage, localStorage");
+
+      function saveObject(){
+          let name = document.getElementById("nameId").value;
+          let age = document.getElementById("ageId").value;
+
+      // sessionStorage.setItem("name", name);
+      // sessionStorage.setItem("age", age);
+      // localStorage.setItem("name", name);
+      // localStorage.setItem("age", age);
+          let newStudent = new student(name, age);
+          let stds = JSON.parse(localStorage.getItem("listStudent"));
+          if(stds){
+              stds.push(newStudent);
+              document.getElementById("pId").innerHTML = "Saved successfully";
+          }else{
+              stds= [newStudent];
+              document.getElementById("pId").innerHTML = "Added new student";
+          }
+        localStorage.setItem("listStudent",JSON.stringify(stds));
+
+      // let std1 = new student("abc", 19);
+      // let std2 = new student("T2301E", 22);
+    }
+
+    function getObject(){
+
+      let stds = JSON.parse(localStorage.getItem("listStudent"));
+      for(let i in stds){
+          if(stds[i]!=null){
+              document.getElementById("pId").innerHTML =  "name: "+stds[i].name + ", age: "+stds[i].age;
+              console.log("name: "+stds[i].name + ", age: "+stds[i].age);
+          }else i++;
+
+      }
+    }
+
+    function deleteData(){
+      let key = "listStudent";
+      // sessionStorage.removeItem(key);
+      localStorage.removeItem(key);
+        document.getElementById("pId").innerHTML = "Deleted";
+    }
+  }else{
+    // alert("window not support sessionStorage, localStorage");
+  }
+  //
+  //
+  // function  saveObject(){
+  //
+  // }
+  // function  getObject(){
+  //
+  // }
+
+</script>
