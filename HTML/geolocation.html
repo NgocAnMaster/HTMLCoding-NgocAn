@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    if(navigator.geolocation){
+        console.log("browser support geolocation");
+        navigator.geolocation.getCurrentPosition(showPosition);
+    }
+    function showPosition(position){
+        document.write("long: "+position.coords.longitude);
+        document.write("<br>");
+        document.write("lat: "+position.coords.latitude);
+    }
+</script>

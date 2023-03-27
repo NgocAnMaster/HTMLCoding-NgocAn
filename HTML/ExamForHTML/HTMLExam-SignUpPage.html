@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Account</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!------ Include the above in your HEAD tag ---------->
+  <link rel="stylesheet" href="HTMLExam-SignUpPage-CSS.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+</head>
+<body>
+<div class="card bg-light">
+  <article class="card-body mx-auto" style="max-width: 400px;">
+    <h4 class="card-title mt-3 text-center">Create Account</h4>
+    <p class="text-center">Get started with your free account</p>
+    <p>
+      <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
+      <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
+    </p>
+    <p class="divider-text">
+      <span class="bg-light">OR</span>
+    </p>
+    <form name="signUp" action="HTMLExam-SignUpPage.html" method="post" onsubmit="return validateSignUpForm()">
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+        </div>
+        <input name="fullName" class="form-control" placeholder="Full name" type="text" oninput="fullNameInput()">
+      </div> <!-- form-group// -->
+      <p class="inputError" id="fullNameErrorId"></p>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+        </div>
+        <input name="email" class="form-control" placeholder="Email address" type="text" oninput="emailInput()">
+      </div> <!-- form-group// -->
+      <p class="inputError" id="emailErrorId"></p>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+        </div>
+        <select class="custom-select" style="max-width: 120px;">
+          <option selected="" value="1">+84</option>
+          <option value="2">+971</option>
+          <option value="3">+972</option>
+          <option value="4">+198</option>
+          <option value="5">+701</option>
+        </select>
+        <input name="teleNum" class="form-control" placeholder="Phone number" type="text" oninput="teleNumInput()">
+      </div> <!-- form-group// -->
+      <p class="inputError" id="teleNumErrorId"></p>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+        </div>
+        <select name="jobType" class="form-control" onclick="jobTypeInput()">
+          <option selected="" value="null"> Select job type</option>
+          <option>Designer</option>
+          <option>Manager</option>
+          <option>Accaunting</option>
+        </select>
+      </div> <!-- form-group end.// -->
+      <p class="inputError" id="jobTypeErrorId"></p>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+        </div>
+        <input name="pass" class="form-control" placeholder="Create password" type="password" oninput="passInput()" onfocus="passOnInput()" onfocusout="passOnOutOfInput()">
+      </div> <!-- form-group// -->
+      <p class="info" id="passRequireId">Enter a password that must contain:<br/>- at least 8 characters<br/>- at least one uppercase letter<br/>- at least one lowercase letter<br/>- at least one number<br/></p>
+      <p class="inputError" id="passErrorId"></p>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+        </div>
+        <input name="passRetype" class="form-control" placeholder="Repeat password" type="password" oninput="passRetypeInput()">
+      </div> <!-- form-group// -->
+      <p class="inputError" id="passRetypeErrorId"></p>
+      <div class="form-group">
+        <input type="submit" class="btn btn-primary btn-block" value="Create Account">
+      </div> <!-- form-group// -->
+      <p class="text-center">Have an account? <a href="#">Log In</a> </p>
+    </form>
+  </article>
+</div> <!-- card.// -->
+
+</div>
+<!--container end.//-->
+</body>
+</html>
+<script>
+  function ValidateEmail(mail)
+  {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+    {
+      return true;
+    }
+    return false;
+  }
+  function validateSignUpForm(){
+    let x = document.forms["signUp"]["pass"].value;
+    let y = document.forms["signUp"]["passRetype"].value;
+    let t = document.forms["signUp"]["email"].value;
+    let z = 1;
+    let a = document.forms["signUp"]["fullName"].value;
+    let b = document.forms["signUp"]["teleNum"].value;
+    // let c = document.forms["signUp"]["dob"].value;
+    let d = document.forms["signUp"]["jobType"].value;
+    // let e = document.forms["signUp"]["tosCheckBox"].checked;
+    if (t.trim() == "") {
+      document.getElementById("emailErrorId").innerHTML = "Please enter your email.";
+      z = 0;
+    }else if(ValidateEmail(t)===false){
+      document.getElementById("emailErrorId").innerHTML = "Please enter a valid email address.";
+      z = 0
+    }else{
+      document.getElementById("emailErrorId").innerHTML = "";
+    }
+    if (x.trim() == "") {
+      document.getElementById("passErrorId").innerHTML = "Please enter your password.";
+      z = 0;
+    }else if(x.length<8){
+      document.getElementById("passErrorId").innerHTML = "The password must contain at least 8 characters.";
+      z = 0;
+    }else if(validatePassword(x)===false){
+      document.getElementById("passErrorId").innerHTML = "Invalid password. Your password is missing:<br/>"+upperMissing+ lowerMissing+numMissing+"Please check your password and try again.";
+      z = 0;
+    }else{
+      document.getElementById("passErrorId").innerHTML = "";
+    }
+    if(y.trim() == ""){
+      document.getElementById("passRetypeErrorId").innerHTML = "Please retype your password.";
+      z = 0
+    }else if(x!=y){
+      document.getElementById("passRetypeErrorId").innerHTML = "Your retyped password doesn't match your new password.";
+      z = 0;
+    }else{
+      document.getElementById("passRetypeErrorId").innerHTML = "";
+    }
+    if(a.trim() == ""){
+      document.getElementById("fullNameErrorId").innerHTML = "Please enter your full name.";
+      z = 0;
+    }else{
+      document.getElementById("fullNameErrorId").innerHTML = "";
+    }
+    if(b.trim() == ""){
+      document.getElementById("teleNumErrorId").innerHTML = "Please enter your telephone number.";
+      z = 0;
+    }else if(!(b.match(numbersOnly))){
+      document.getElementById("teleNumErrorId").innerHTML = "Please enter numbers only in this field.";
+      z = 0;
+    }else if((b.length<10)||(b.length>12)){
+      document.getElementById("teleNumErrorId").innerHTML = "Numbers must have from 10 to 12 dights. Check your number and try again.";
+      z = 0;
+    }else{
+      document.getElementById("teleNumErrorId").innerHTML = "";
+    }
+    // if(c == ""){
+    //   document.getElementById("dobErrorId").innerHTML = "Please enter your date of birth.";
+    //   z = 0;
+    // }else{
+    //   document.getElementById("dobErrorId").innerHTML = "";
+    // }
+    if(d == "null"){
+      document.getElementById("jobTypeErrorId").innerHTML = "Please select your job type.";
+      z = 0;
+    }else{
+      document.getElementById("jobTypeErrorId").innerHTML = "";
+    }
+    // if(e == false){
+    //   document.getElementById("tosErrorId").innerHTML = "Please accept our Terms of Service and Privacy Policy before you can sign up.";
+    //   z = 0;
+    // }else{
+    //   document.getElementById("tosErrorId").innerHTML = "";
+    // }
+    if(z===0){
+      return false;
+    }
+  }
+  var upperCaseLetters = /[A-Z]/g;
+  var lowerCaseLetters = /[a-z]/g;
+  var numbers = /[0-9]/g;
+  let upperMissing, lowerMissing, numMissing;
+  var numbersOnly = /^[0-9]+$/;
+  function validatePassword(pass){
+    let z = 1;
+    if(!(pass.match(upperCaseLetters))){
+      upperMissing = "- an uppercase letter<br/>";
+      z = 0;
+    }else{
+      upperMissing = "";
+    }
+    if(!(pass.match(lowerCaseLetters))){
+      lowerMissing = "- a lowercase letter<br/>";
+      z = 0;
+    }else{
+      lowerMissing = "";
+    }
+    if(!(pass.match(numbers))){
+      numMissing = "- a number<br/>";
+      z = 0;
+    }else{
+      numMissing = "";
+    }
+    if(z===0){
+      return false;
+    }
+  }
+  function fullNameInput(){
+    document.getElementById("fullNameErrorId").innerHTML = "";
+  }
+  function emailInput(){
+    document.getElementById("emailErrorId").innerHTML = "";
+  }
+  function teleNumInput(){
+    document.getElementById("teleNumErrorId").innerHTML = "";
+  }
+  function jobTypeInput(){
+    document.getElementById("jobTypeErrorId").innerHTML = "";
+  }
+  function passInput(){
+    document.getElementById("passErrorId").innerHTML = "";
+  }
+  function passRetypeInput(){
+    document.getElementById("passRetypeErrorId").innerHTML = "";
+  }
+  function passOnInput(){
+    document.getElementById("passRequireId").style.display = "block";
+  }
+  function passOnOutOfInput(){
+    document.getElementById("passRequireId").style.display = "none";
+  }
+
+</script>

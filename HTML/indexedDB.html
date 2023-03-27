@@ -11,6 +11,10 @@
 <input type="text" id="ageId"><br/>
 <button onclick="add()">Add Student</button>
 <button onclick="getStudentByKey()">Get Student</button>
+<button onclick="getAllStudent()">Get All Student</button>
+<button onclick="updateData()">Update Student</button>
+<button onclick="deleteData()">Delete Student</button>
+<button onclick="findByIndex()">Find by Index Student</button>
 </body>
 </html>
 <script>
@@ -26,6 +30,7 @@
     requestOpen.onupgradeneeded = function (e){
       let dbIndex = e.target.result;
       let objectStorage = dbIndex.createObjectStore("students", {autoIncrement:true});
+      objectStorage.createIndex("name","name",{unique:false});
     }
     requestOpen.onsuccess = function (e){
       console.log("create db success");
@@ -74,6 +79,66 @@
       }
       requestGet.onerror = function (){
           console.log("get data error");
+      }
+  }
+  //get all data
+  function getAllStudent(){
+      let transaction = db.transaction(["students"],"readonly");
+      let storage = transaction.objectStore("students");
+      let requestGet = storage.getAll();
+      requestGet.onsuccess = function (e){
+          let result = e.target.result;
+          for(let i in result){
+              console.log("name: "+result[i].name + ",age: "+result[i].age);
+          }
+      }
+      requestGet.onerror = function (){
+          console.log("get data error");
+      }
+  }
+  //update data
+  function updateData(){
+      let key = 1;
+      let transaction = db.transaction(["students"],"readwrite");
+      let storage = transaction.objectStore("students");
+      let requestGet = storage.get(key);
+      requestGet.onsuccess = function (e){
+          let student = e.target.result;
+          student.name = "T2301E FPTAptech";
+          student.age = 50;
+          storage.put(student, key);
+          console.log("update data succeed");
+      }
+      requestGet.onerror = function (){
+          console.log("update data error");
+      }
+  }
+  //delete data
+  function deleteData(){
+      let key = 1;
+      let transaction = db.transaction(["students"],"readwrite");
+      let storage = transaction.objectStore("students");
+      // let requestDel = storage.delete(key);
+      let requestDel = storage.clear();
+      requestDel.onsuccess = function (){
+          console.log("delete success");
+      }
+      requestDel.onerror = function (){
+          console.log("delete error");
+      }
+  }
+
+  // find by index
+  function findByIndex(){
+      let transaction = db.transaction(["students"],"readonly");
+      let storage = transaction.objectStore("students");
+      let index = storage.index("name");
+      let requestData = index.getAll("T2301E");
+      requestData.onsuccess = function (e){
+          let result = e.target.result;
+          for (let i in result){
+              console.log("name: "+result[i].name + ",age: "+result[i].age);
+          }
       }
   }
 </script>
