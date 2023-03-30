@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS Introduction - Master Group</title>
+  <link rel="stylesheet" href="CSS/StyleSheetPage.css">
+  <script src="JS/angular.js"></script>
+  <script src="JS/AngularJSPage.js"></script>
+    <link rel="icon" type="image/x-icon" href="Image/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        input.ng-invalid{
+            border: red solid 1px;
+        }
+        input.ng-valid{
+            border: green solid 1px;
+        }
+    </style>
+    <style>
+        button{
+            float: none;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <div class="navbar">
+        <div class="logo">
+            <a class="navigationTop" href="HomePage.html"><img src="Image/MasterLogoWhiteCropped.png" style="max-width: 70px" alt="Home"/></a>
+        </div>
+        <a href="HomePage.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn"><a href="AboutPage.html">About</a>
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Work</a>
+                <a href="#">Jobs</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn"><a href="NewsPage.html">News</a>
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Entertainment</a>
+                <a href="#">Sports</a>
+                <a href="#">Learning</a>
+                <a href="#">General</a>
+                <a href="#">Trending</a>
+            </div>
+        </div>
+        <input type="text" name="search" id="searchBoxId" placeholder="Search...">
+        <div style="float: right">
+            <a href="SignInPage.html">Sign in</a>
+            <a href="SignUpPage.html">Sign up</a>
+        </div>
+    </div>
+</nav>
+<div style="display: flex">
+    <article style="max-width: 1000px">
+        <h1 style="font-size: 40px">Angular JS Introduction</h1>
+        <div style="font-size: 25px">
+            Angular JS is one of the most popular kinds of JavaScript used by many IT professors and programmers to make the most of the web. More importantly, it is open-source and free, so Angular JS is more and more popular across the web nowadays. If you want to do it yourself, this is the right place for you. Let me guide you in today's article!
+        </div><br/>
+        <!-- Container for the image gallery -->
+        <div class="newsText">
+            Firstly, you need to initialize the Angular JS script. Here we have locally stored one for this script, but if you want to use it directly, you might want to <a href="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js">read the original source code here</a>.
+        </div>
+        <div class="newsText">
+            Now that you have the source code, check the header - which is the html tag. The ng-app is provided in that tag, with the name corresponding to the angular.module name in the JS file named AngularJSPage.
+        </div>
+        <h2 class="sectionHeader">Let's control it!</h2>
+        <div class="newsText">
+            After you have initialized the module (watched the source code yet? It was myApp), we have to add controls key to it. Right below this div tag in source code, we have another ng-controller parameters named "firstController", which is the same as the name of the first parameter in app.controller. The second one matches myController, which is a function called to the div to execute the angular control blinder. Watch the example below:
+        </div>
+        <div ng-controller="firstController">
+            <label for="nameIdInputBox01">Type your name:<span style="color: red"><sup>*</sup></span></label>
+            <input type="text" id="nameIdInputBox01" ng-model="name" required>
+            <label for="classIdInputBox01">Type your class:<span style="color: red"><sup>*</sup></span></label>
+            <input type="text" id="classIdInputBox01" ng-model="className" required>
+            <p class="info">Your name: <b>{{name}}</b><br/>Your class name: <b>{{className}}</b><br/>Concat your name and class name: <b>{{name + " " + className}}</b></p>
+            <br/>
+            <div class="newsText">
+                Well, the above example uses brackets to encase your desired text. There is another example, which makes the use of the typed text above, that is p tag with ng-bind parameter. Type your name and class in the input boxes above and check the result below.
+            </div>
+            <div class="newsText">
+                <i>Name:</i> <b><p ng-bind="name"></p></b>
+                <i>Class:</i> <b><p ng-bind="className"></p></b>
+            </div>
+            <div class="newsText">
+                Check the code! The function mentioning in above example uses &dollar;scope.name and &dollar;scope.className. When you first load into this page, these inputs are left blank, and since it is required, the borders are red. When you type any characters in those boxes, the input border turns green.
+            </div>
+            <div class="newsText">
+                Another example is that you can make your own array and embed them directly into your page. Here's an example: When specifying std1.name is "Le Ngoc An" and std1.className is "T2301E", it returns like this:<br/>Your name: {{std1.name}}<br/>Your class: {{std1.className}}
+            </div>
+            <div class="newsText">
+                Here's a more simple example. Just type 5+6 in brackets and it returns: {{5+6}}.
+            </div>
+            <div class="newsText">
+                If you want to init a test directly, it's OK! Watch this example when we put test=1 (which is a number) and test1='T2301E' (which is a string):
+            </div>
+            <div ng-init="test = 1;test1 = 'T2301E'">
+                test: {{test}}
+                <br/>
+                test1: {{test1}}
+            </div>
+            <h2 class="sectionHeader">More complexity incoming...</h2>
+            <div class="newsText">
+                Now, let's turn into more complex one. Check the example below and press "Click here to plus one".
+            </div>
+            <p>The current number is {{count}} (default 0).</p>
+            <button ng-click="count = count + 1">Click here to plus one</button>
+            <div class="newsText">
+                Check it out! When you click on the button, it increases the value of &dollar;scope.count. The default value of that parameter is 0, and to make this works, we have another parameter namely, ng-click. And when we click on it, the button triggers the command to plus one on the count value, that's how it works.
+            </div>
+            <div class="newsText">
+                Got it? Let's go to another example, which is quite interesting to find out.
+            </div>
+            <h2 class="sectionHeader">Is making a list easy?</h2>
+            <div class="newsText">
+                Well, just a problem of an array. Check the example - well, not an example, but a bulleted list below:
+            </div>
+            <ul ng-repeat="std in students">
+                <li>{{std}}</li>
+            </ul>
+            <div class="newsText">
+                Well, that's how we make a list! We just need ng-repeat. But not like simple example above, we need an array, with each encased in 'this', and all [encased here], seperated with comma. Once you made it, the list flows as a breeze!
+            </div>
+            <h2 class="sectionHeader">Let's make a functional table!</h2>
+            <div class="newsText">
+                But not just a normal table... here's a good table to learn about!
+            </div>
+            <table style="border: solid black 1px">
+                <tr>
+                    <th>STT</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Created at</th>
+                </tr>
+                <tr ng-repeat="product in products | orderBy:'price' | limitTo:limit:offset">
+                    <td>{{$index + 1}}</td>
+                    <td>{{product.name | uppercase}}</td>
+                    <td>{{product.price | currency:"VND":4}}</td>
+                    <td>{{product.createdAt | date:"yyyy-MM-dd"}}</td>
+                </tr>
+            </table>
+            Showing from {{offset+1}} to {{offset+limit}} out of {{length}}.<br/>
+            <button ng-click="offset = offset - limit">&leftarrow; Back</button><button ng-click="offset = offset + limit">Next &rightarrow;</button>
+            <br/><label for="limitToIdBox01">Limit the list to:</label><input type="number" id="limitToIdBox01" step="1" ng-model="limit">
+            <div class="newsText">
+                Such a complex list, right? Again, by default, the table limit is 5, as specified by &dollar;scope.limit, and the table offset is 0, as specified by &dollar;scope.offset. But that's not enough. Both the offset and limit is changeable thanks to the back and next button, which minus or plus the current value in limit to the table using ng-click parameter; as well as the "Limit the list to" box, which directly limits the entries that appears on the board using ng-limit parameter. The table is then configured by using "limitTo:limit:offset" option in ng-repeat parameter. The default soft is by price, as specified in the "orderBy:'price'" option. Check the code of this article to see whether it was right or not.
+            </div>
+        </div>
+        <div class="newsText">
+            Have you understood those simple examples above yet? If yes, then hope those examples will help you get on with Angular JS more easily. Good luck!
+        </div>
+        <div class="newsAuthor"><b>Lê Ngọc An</b></div>
+    </article>
+    <aside style="max-width: 500px">
+        <h1>More by Master Group</h1>
+        <!-- Copy from News Page -->
+        <div class="news">
+            <a href="StorageTest.html" class="news">
+                <ul class="noBullet">
+                    <li><h3>Student Storage</h3></li>
+                    <li>Make a list for students using storage is one of the most popular methods to make a database in HTML. Today, we have prepared one of them. Read this article to learn more.</li>
+                </ul>
+            </a>
+        </div>
+        <div class="news">
+            <a href="Canvas.html" class="news">
+                <canvas width="125" height="100" style="border: solid black 1px" id="lineBentId"></canvas>
+                <ul class="noBullet">
+                    <li><h3>Canvas Drawings</h3></li>
+                    <li>The canvas is one of the widely used graphics in making HTML.<br/>Here we will introduce the simplest drawings made in canvas frames.</li>
+                </ul>
+            </a>
+        </div>
+        <div class="news">
+            <a href="Vinfast-VF8.html" class="news">
+                <img src="Image/VinFast-VF8.png" height="100" width="200"/>
+                <ul class="noBullet">
+                    <li><h3>Vinfast VF8 is now available!</h3></li>
+                    <li>The product that makes evolution from the Vietnamese car industry - a fully electric car exported to the world!</li>
+                </ul>
+            </a>
+        </div>
+        <div class="news">
+            <a href="#" class="news">
+                <img src="Image/image_bca542d78f.png" height="100" width="200"/>
+                <ul class="noBullet">
+                    <li><h3>More game shows this March</h3></li>
+                    <li>From this weekend, The Fun Weekend is getting more fun than ever!<br/>Enjoy our new shows premiere this month on StarTV, EndlessTV and the Master Home app.</li>
+                </ul>
+            </a>
+        </div>
+        <div class="news">
+            <a href="#" class="news">
+                <img src="Image/CDTX2023Valentine.png" height="100" width="200"/>
+                <ul class="noBullet">
+                    <li><h3>Valentine with The Spring Ride</h3></li>
+                    <li>With Valentine on the way, we'll celebrate it with our own way!<br/>Enjoy with your lover here this 14<sup>th</sup> of February.</li>
+                </ul>
+            </a>
+        </div>
+        <div class="news">
+            <a href="#" class="news">
+                <img src="Image/CDTX2023OfficialPoster.png" height="100" width="200"/>
+                <ul class="noBullet">
+                    <li><h3>Announcement of The Youth Ride 2023</h3></li>
+                    <li>Everyone have their own youth...<br/>Join our ride now, from 1<sup>st</sup> February!</li>
+                </ul>
+            </a>
+        </div>
+        <div class="news">
+            <a href="#" class="news">
+                <img src="Image/QM23Poster5Official(WithoutSponsors).png" height="100" width="200"/>
+                <ul class="noBullet">
+                    <li><h3>Master Tet - Quy Mao 23 has started!</h3></li>
+                    <li>Bring more moments to your family this Tet with our familiar shows from the creators of the best event for 3 consecutive years!<br/>Only from February 21<sup>st</sup> to February 26<sup>th</sup>.</li>
+                </ul>
+            </a>
+        </div>
+    </aside>
+</div>
+<footer>
+    <img src="Image/MasterLogoBlack.png" style="max-width: 100px"/>
+    <div class="footerBelowImage"><!-- allows space -->
+        Master Group, No.10 New Avenue, Jacobs City, Mini World<br/>
+        Contact us: 1900 22 22 22 or 0984772722<br/>
+        &copy;2023 Master Group. All rights reserved.
+    </div>
+</footer>
+</body>
+</html>
+<script>
+    //lineBent
+    let lineBent = document.getElementById("lineBentId");
+    let contextLineBent = lineBent.getContext("2d");
+    contextLineBent.beginPath();
+    contextLineBent.moveTo(0,0);
+    contextLineBent.lineTo(200,50);
+    contextLineBent.lineTo(100,150);
+    contextLineBent.lineTo(20,80);
+    contextLineBent.lineTo(5,140);
+    contextLineBent.lineTo(200,100);
+    contextLineBent.strokeStyle = "gray";
+    contextLineBent.lineWidth = 5;
+    contextLineBent.stroke();
+    </script>
