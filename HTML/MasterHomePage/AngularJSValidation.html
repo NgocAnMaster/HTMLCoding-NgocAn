@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS Validation - Master Group</title>
+    <script src="JS/angular.js"></script>
+    <script src="JS/angularJS2.js"></script>
+    <link rel="stylesheet" href="CSS/StyleSheetPage.css">
+    <link rel="icon" type="image/x-icon" href="Image/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        input.ng-invalid{
+            border: red solid 1px;
+        }
+        input.ng-valid{
+            border: green solid 1px;
+        }
+    </style>
+    <style>
+        button{
+            float: none;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <div class="navbar">
+        <div class="logo">
+            <a class="navigationTop" href="HomePage.html"><img src="Image/MasterLogoWhiteCropped.png" style="max-width: 70px" alt="Home"/></a>
+        </div>
+        <a href="HomePage.html">Home</a>
+        <div class="dropdown">
+            <button class="dropbtn"><a href="AboutPage.html">About</a>
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Work</a>
+                <a href="#">Jobs</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn"><a href="NewsPage.html">News</a>
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Entertainment</a>
+                <a href="#">Sports</a>
+                <a href="#">Learning</a>
+                <a href="#">General</a>
+                <a href="#">Trending</a>
+            </div>
+        </div>
+        <input type="text" name="search" id="searchBoxId" placeholder="Search...">
+        <div style="float: right">
+            <a href="SignInPage.html">Sign in</a>
+            <a href="SignUpPage.html">Sign up</a>
+        </div>
+    </div>
+</nav>
+<div style="display: flex">
+    <article style="max-width: 1000px">
+        <h1 style="font-size: 40px">Angular JS Validation</h1>
+        <div style="font-size: 25px">
+            In the previous article, we talked about Angular JS and its use in forms. However, this might raise some questions, especially among beginners to the question: How to validate the form when this is done? In today's article, you'll get to know about AngularJS form validation. Keep reading to know more about it.
+        </div><br/>
+        <!-- Container for the image gallery -->
+        <div class="newsText">
+            Again, you need to initialize the Angular JS script. We have provided one for you, check <a href="AngularJSSample.html">our previous article</a> to know how to set it up in your page.
+        </div>
+        <h2 class="sectionHeader">Let's get started!</h2>
+        <div class="newsText">
+            Before your form can be validated, it is important to put the tag &lt;form (parameters here)&gt;&lt;/form&gt; in your page, so that the page can know the form element to call AngularJS script.
+        </div>
+        <div class="newsText">
+            Now, once you have the form, you don't need to go anywhere else. Just remember some parameters that is used in forms to get AngularJS up and working for your own form:
+            <ul>
+                <li>ng-submit: used in form tag, informing what to do when you submit the form.</li>
+                <li>ng-model: used majorly in inputs, telling the script to set the name in the parameter to be used for other events that user specified.</li>
+                <li>ng-show: message to show when conditions in it are met.</li>
+                <li>ng-pattern: specifying the pattern. This must be preconfigured in the JavaScript file linked to this HTML file.</li>
+                <li>ng-minlength: specifying the minimum accepted length of the input. Inputs that have length less than this value will not be accepted.</li>
+                <li>ng-maxlength: specifying the maximum accepted length of the input. Inputs that have length more than this value will not be accepted.</li>
+            </ul>
+            Besides, there are some preconfigured parameters that you need to know:
+            <ul>
+                <li>&dollar;touched: indicating that the input is touched.</li>
+                <li>&dollar;untouched: indicating that the input is untouched yet.</li>
+                <li>&dollar;pristine: indicating that the input hasn't changed since the page is loaded.</li>
+                <li>&dollar;dirty: indicating that the input has changed since the page is loaded.</li>
+                <li>&dollar;valid: indicating that the input is valid.</li>
+                <li>&dollar;invalid: indicating that the input is invalid.</li>
+            </ul>
+            You can use them in your form to make it be automatically validated every time you input in the form (or best called, it is validated immediately). Check the following form for example:
+        </div>
+        <div ng-controller="formController">
+            <form name="myForm" novalidate ng-submit="myForm.$valid && submitForm()">
+                <div>
+                    <label for="nameBoxIdForm:01">Name</label>
+                    <input type="text" name="name" ng-model="name" required ng-minlength="10" id="nameBoxIdForm:01">
+                    <p class="error" ng-show="myForm.name.$dirty && myForm.name.$error.required">This field is required.</p>
+                    <p class="error" ng-show="myForm.name.$dirty && myForm.name.$error.minlength">The name must be at least 10 characters.</p>
+                </div>
+                <div>
+                    <label for="emailBoxIdForm:01">Email</label>
+                    <input type="email" name="email" ng-model="email" ng-pattern="pattern" id="emailBoxIdForm:01" required>
+                    <p class="error" ng-show="myForm.email.$dirty && myForm.email.$error.required">This field is required.</p>
+                    <p class="error" ng-show="myForm.email.$dirty && myForm.email.$error.pattern">Invalid email address pattern.</p>
+                </div>
+                <div>
+                    <label for="phoneBoxIdForm:01">Phone number:</label>
+                    <input type="text" name="phone" ng-model="phone" id="phoneBoxIdForm:01" ng-pattern="patternNumber" required ng-minlength="9" ng-maxlength="11">
+                    <p class="error" ng-show="myForm.phone.$dirty && myForm.phone.$error.patternNumber">Invalid phone number.</p>
+                    <p class="error" ng-show="myForm.phone.$dirty && myForm.phone.$error.required">This field is required.</p>
+                    <p class="error" ng-show="myForm.phone.$dirty && (myForm.phone.$error.minlength||myForm.phone.$error.maxlength)">The phone number must be from 9 to 11 numbers.</p>
+                </div>
+                <div>
+                    <label for="ageBoxIdForm:01">Age:</label>
+                    <input type="number" name="age" ng-model="age" id="ageBoxIdForm:01" required>
+                    <p class="error" ng-show="myForm.age.$dirty && myForm.age.$error.required">This field is required.</p>
+                </div>
+                <button type="submit">Submit</button>
+                <p ng-show="myForm.$valid"><b>{{message}}</b><br/>Name: {{name}}<br/>Email: {{email}}<br/>Phone number: {{phone}}<br/>Age: {{age}}</p>
+            </form>
+        </div>
+        <div class="newsText">
+            With the above article, we'll hope that you have known about validating a single form using AngularJS. Happy editing!
+        </div>
+        <div class="newsAuthor"><b>Lê Ngọc An</b></div>
+    </article>
+    <aside style="max-width: 500px">
+        <h1>More by Master Group</h1>
+        <!-- Copy from News Page -->
+        <div class="news">
+            <a href="AngularJSSample.html" class="news">
+                <ul class="noBullet">
+                    <li><h3>Angular JS Introduction</h3></li>
+                    <li>Angular JS is one of the most popular kinds of JavaScript used by many IT professors and programmers to make the most of the web. More importantly, it is open-source and free, so Angular JS is more and more popular across the web nowadays. If you want to do it yourself, this article is the right place for you.</li>
+                </ul>
+            </a>
+        </div>
+        <div class="news">
+            <a href="StorageTest.html" class="news">
+                <ul class="noBullet">
+                    <li><h3>Student Storage</h3></li>
+                    <li>Make a list for students using storage is one of the most popular methods to make a database in HTML. Today, we have prepared one of them. Read this article to learn more.</li>
+                </ul>
+            </a>
+        </div>
+        <div class="news">
+            <a href="Canvas.html" class="news">
+                <canvas width="125" height="100" style="border: solid black 1px" id="lineBentId"></canvas>
+                <ul class="noBullet">
+                    <li><h3>Canvas Drawings</h3></li>
+                    <li>The canvas is one of the widely used graphics in making HTML.<br/>Here we will introduce the simplest drawings made in canvas frames.</li>
+                </ul>
+            </a>
+        </div>
+        <div class="news">
+            <a href="Vinfast-VF8.html" class="news">
+                <img src="Image/VinFast-VF8.png" height="100" width="200"/>
+                <ul class="noBullet">
+                    <li><h3>Vinfast VF8 is now available!</h3></li>
+                    <li>The product that makes evolution from the Vietnamese car industry - a fully electric car exported to the world!</li>
+                </ul>
+            </a>
+        </div>
+        <div class="news">
+            <a href="#" class="news">
+                <img src="Image/image_bca542d78f.png" height="100" width="200"/>
+                <ul class="noBullet">
+                    <li><h3>More game shows this March</h3></li>
+                    <li>From this weekend, The Fun Weekend is getting more fun than ever!<br/>Enjoy our new shows premiere this month on StarTV, EndlessTV and the Master Home app.</li>
+                </ul>
+            </a>
+        </div>
+        <div class="news">
+            <a href="#" class="news">
+                <img src="Image/CDTX2023Valentine.png" height="100" width="200"/>
+                <ul class="noBullet">
+                    <li><h3>Valentine with The Spring Ride</h3></li>
+                    <li>With Valentine on the way, we'll celebrate it with our own way!<br/>Enjoy with your lover here this 14<sup>th</sup> of February.</li>
+                </ul>
+            </a>
+        </div>
+        <div class="news">
+            <a href="#" class="news">
+                <img src="Image/CDTX2023OfficialPoster.png" height="100" width="200"/>
+                <ul class="noBullet">
+                    <li><h3>Announcement of The Youth Ride 2023</h3></li>
+                    <li>Everyone have their own youth...<br/>Join our ride now, from 1<sup>st</sup> February!</li>
+                </ul>
+            </a>
+        </div>
+        <div class="news">
+            <a href="#" class="news">
+                <img src="Image/QM23Poster5Official(WithoutSponsors).png" height="100" width="200"/>
+                <ul class="noBullet">
+                    <li><h3>Master Tet - Quy Mao 23 has started!</h3></li>
+                    <li>Bring more moments to your family this Tet with our familiar shows from the creators of the best event for 3 consecutive years!<br/>Only from February 21<sup>st</sup> to February 26<sup>th</sup>.</li>
+                </ul>
+            </a>
+        </div>
+    </aside>
+</div>
+<footer>
+    <img src="Image/MasterLogoBlack.png" style="max-width: 100px"/>
+    <div class="footerBelowImage"><!-- allows space -->
+        Master Group, No.10 New Avenue, Jacobs City, Mini World<br/>
+        Contact us: 1900 22 22 22 or 0984772722<br/>
+        &copy;2023 Master Group. All rights reserved.
+    </div>
+</footer>
+</body>
+</html>
+<script>
+    //lineBent
+    let lineBent = document.getElementById("lineBentId");
+    let contextLineBent = lineBent.getContext("2d");
+    contextLineBent.beginPath();
+    contextLineBent.moveTo(0,0);
+    contextLineBent.lineTo(200,50);
+    contextLineBent.lineTo(100,150);
+    contextLineBent.lineTo(20,80);
+    contextLineBent.lineTo(5,140);
+    contextLineBent.lineTo(200,100);
+    contextLineBent.strokeStyle = "gray";
+    contextLineBent.lineWidth = 5;
+    contextLineBent.stroke();
+</script>

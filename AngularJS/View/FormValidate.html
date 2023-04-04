@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation</title>
+  <script src="../JS/angular.js"></script>
+    <script src="../JS/formValidate.js"></script>
+</head>
+<body ng-controller="formController">
+<form name="myForm" novalidate ng-submit="myForm.$valid && submitForm() && submitConfirmation(myForm.$valid)" action="#">
+    <div>
+        <label>Name</label>
+        <input type="text" name="name" ng-model="name" required ng-minlength="10">
+        <span style="color: red" ng-show="myForm.name.$dirty && myForm.name.$error.minlength">Vui long nhap ten it nhat 10 ky tu</span>
+    </div>
+    <div>
+        <label>Email</label>
+        <input type="text" name="email" ng-model="email" ng-pattern="pattern" required>
+        <span style="color: red" ng-show="myForm.email.$dirty && myForm.email.$error.required">Thong tin email khong duoc de trong</span>
+        <span style="color: red" ng-show="myForm.email.$dirty && myForm.email.$error.pattern">Khong dung dinh dang email</span>
+    </div>
+    <button type="submit">Submit</button>
+    {{myForm.$valid}}
+</form>
+
+<p>{{message}}</p>
+
+<!--form pristine: {{myForm.$pristine}}-->
+<!--<br/>-->
+<!--name valid: {{myForm.name.$valid}}-->
+<!--<br/>-->
+<!--email valid : {{myForm.email.$valid}}-->
+<!--<br/>-->
+<!--email invalid : {{myForm.email.$invalid}}-->
+
+</body>
+</html>
