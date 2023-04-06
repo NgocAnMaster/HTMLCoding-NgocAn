@@ -1,7 +1,7 @@
 
 let app = angular.module("myApp",[]);
 app.controller("firstController", myController);
-function myController($scope){
+function myController($scope, $http){
     $scope.name = "";
     $scope.className = "";
     $scope.count = 0;
@@ -30,4 +30,17 @@ function myController($scope){
     $scope.offset = offset;
     let std1 = {name:"Le Ngoc An", className :"T2301E"};
     $scope.std1 = std1;
+
+    let data;
+    $http.get("JSON/studentData.json").then(function (response){
+        data = response.data;
+        $scope.studentListNames = data.T2301E1;
+        $scope.changeList = function (list){
+            if (list == "T2301E1"){
+                $scope.studentListNames = data.T2301E1;
+            }else if (list == "T2301E2"){
+                $scope.studentListNames = data.T2301E2;
+            }
+        }
+    })
 }

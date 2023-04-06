@@ -1,0 +1,33 @@
+{
+  "T2301E1": [
+    {"name":"Bạch Thái Dũng","birthDate":2004,"studentCode":"TH2211022"},
+    {"name":"Cao Thành Đạt","birthDate":2004,"studentCode":"TH2212011"},
+    {"name":"Chu Thành Công","birthDate":2004,"studentCode":"TH2212019"},
+    {"name":"Đinh Minh Long","birthDate":2004,"studentCode":"TH2212004"},
+    {"name":"Đỗ Thị Thu Hoài","birthDate":2004,"studentCode":"TH2301003"},
+    {"name":"Đỗ Thị Trang","birthDate":2004,"studentCode":"TH2212012"},
+    {"name":"Đỗ Tiến Khiêm","birthDate":2004,"studentCode":"TH2212002"},
+    {"name":"Lê Đình Đạt","birthDate":2004,"studentCode":"TH2212023"},
+    {"name":"Lê Ngọc An","birthDate":2004,"studentCode":"TH2212014"},
+    {"name":"Lê Ngọc Sơn","birthDate":2004,"studentCode":"TH2212013"},
+    {"name":"Lê Quang Huy","birthDate":2004,"studentCode":"TH2212016"},
+    {"name":"Ngô Lâm Khải","birthDate":2004,"studentCode":"TH2211023"},
+    {"name":"Nguyễn Đức Thắng","birthDate":2004,"studentCode":"TH2212007"},
+    {"name":"Nguyễn Đức Thuận","birthDate":2004,"studentCode":"TH2212006"}
+  ],
+  "T2301E2": [
+    {"name":"Nguyễn Hoàng Phúc","birthDate":2004,"studentCode":"TH2212003"},
+    {"name":"Nguyễn Hồng Sơn","birthDate":2004,"studentCode":"TH2212017"},
+    {"name":"Nguyễn Hữu Đào","birthDate":2004,"studentCode":"TH2212008"},
+    {"name":"Nguyễn Phúc Hải Minh","birthDate":2004,"studentCode":"TH2212020"},
+    {"name":"Nguyễn Quốc Hưng","birthDate":2004,"studentCode":"TH2208078"},
+    {"name":"Nguyễn Trường Giang","birthDate":2004,"studentCode":"TH2204015"},
+    {"name":"Phạm Bình Minh","birthDate":2004,"studentCode":"TH2212005"},
+    {"name":"Phan Quang Tuyến","birthDate":2004,"studentCode":"TH2211024"},
+    {"name":"Trần Đình Tuyên","birthDate":2004,"studentCode":"TH2212015"},
+    {"name":"Trần Thanh Sơn","birthDate":2004,"studentCode":"TH2212018"},
+    {"name":"Trương Văn Đức","birthDate":2004,"studentCode":"TH2212021"},
+    {"name":"Vũ Hoàng Nam","birthDate":2004,"studentCode":"TH2212022"},
+    {"name":"Vũ Huy Quốc Việt","birthDate":2004,"studentCode":"TH2212024"}
+  ]
+}

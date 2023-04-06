@@ -156,6 +156,37 @@
             <div class="newsText">
                 Such a complex list, right? Again, by default, the table limit is 5, as specified by &dollar;scope.limit, and the table offset is 0, as specified by &dollar;scope.offset. But that's not enough. Both the offset and limit is changeable thanks to the back and next button, which minus or plus the current value in limit to the table using ng-click parameter; as well as the "Limit the list to" box, which directly limits the entries that appears on the board using ng-limit parameter. The table is then configured by using "limitTo:limit:offset" option in ng-repeat parameter. The default soft is by price, as specified in the "orderBy:'price'" option. Check the code of this article to see whether it was right or not.
             </div>
+            <div class="newsText">
+                Another more complex example:
+            </div>
+            <table style="border: solid black 1px">
+                <tr style="border: solid black 1px">
+                    <th>No.</th>
+                    <th>Name</th>
+                    <th>Date of Birth</th>
+                    <th>Student code</th>
+                </tr>
+                <tr ng-repeat="studentListName in studentListNames">
+                    <td>{{$index + 1}}</td>
+                    <td>{{studentListName.name | uppercase}}</td>
+                    <td>{{studentListName.birthDate}}</td>
+                    <td>{{studentListName.studentCode}}</td>
+                </tr>
+            </table>
+            <div>
+                <b>List by:</b>
+                <label class="container" style="padding: 0 0 5px 20px">T2301E - Group 1
+                    <input type="radio" name="Select" ng-click="changeList('T2301E1')">
+                    <span class="radioButton"></span>
+                </label>
+                <label class="container" style="padding: 0 0 5px 20px">T2301E - Group 2
+                    <input type="radio" name="Select" ng-click="changeList('T2301E2')">
+                    <span class="radioButton"></span>
+                </label>
+            </div>
+            <div class="newsText">
+                Using the JSON file, this table is flexible using ng-click with a switch function defined in a JS file.
+            </div>
         </div>
         <div class="newsText">
             Have you understood those simple examples above yet? If yes, then hope those examples will help you get on with Angular JS more easily. Good luck!
