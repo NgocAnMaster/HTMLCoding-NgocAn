@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular JS Practice File</title>
+    <script src="angular.js"></script>
+    <script src="angular-route.js"></script>
+    <script src="JSAngularFile.js"></script>
+</head>
+<body ng-controller="mainController">
+<a href="#!/rome" ng-click="switch ('rome')">Rome</a>
+<a href="#!/paris" ng-click="switch ('paris')">Paris</a>
+<a href="#!/london" ng-click="switch ('london')">London</a>
+<div>Employee Info</div>
+<div ng-controller="allController">
+    <div ng-repeat="employee in list">
+        <img ng-src="{{employee.img}}" width="60" height="60">
+        <div>{{employee.name}}</div>
+        <div>{{employee.occupation}}</div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Paris</title>
+    <script src="angular.js"></script>
+    <script src="angular-route.js"></script>
+    <script src="JSAngularFile.js"></script>
+</head>
+<body ng-controller="parisController">
+<div ng-repeat="parisEmployee in parisList">
+    <img ng-src="{{parisEmployee.img}}" width="60" height="60">
+    <div>{{parisEmployee.name}}</div>
+    <div>{{parisEmployee.occupation}}</div>
+</div>
+</body>
+</html>

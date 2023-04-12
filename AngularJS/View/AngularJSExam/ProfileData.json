@@ -1,0 +1,17 @@
+{
+  "rome": [
+    {"name":"Robert King","occupation":"Team Lead","img":"1516759863552.jpg"},
+    {"name":"Michael Suyama","occupation":"Developer","img":"6106-lenny-kravitz.jpg"},
+    {"name":"Margaret Peacock","occupation":"Developer","img":"MargaretPeacock.jpg"}
+  ],
+  "paris": [
+    {"name":"Robert King","occupation":"Team Lead","img":"1516759863552.jpg"},
+    {"name":"Michael Suyama","occupation":"Developer","img":"6106-lenny-kravitz.jpg"},
+    {"name":"Margaret Peacock","occupation":"Developer","img":"MargaretPeacock.jpg"}
+  ],
+  "london": [
+    {"name":"Robert King","occupation":"Team Lead","img":"1516759863552.jpg"},
+    {"name":"Michael Suyama","occupation":"Developer","img":"6106-lenny-kravitz.jpg"},
+    {"name":"Margaret Peacock","occupation":"Developer","img":"MargaretPeacock.jpg"}
+  ]
+}
